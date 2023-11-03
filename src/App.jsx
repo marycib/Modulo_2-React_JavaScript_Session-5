@@ -8,13 +8,15 @@ function App() {
   const [registrations, setRegistrations] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = (values, { resetForm }) => {
     setRegistrations([...registrations, values]);
     setIsSubmitted(true);
+    resetForm();
   };
 
   return (
     <div className="app">
+      <h1>PET STORE</h1>
       <Formik
         initialValues={{
           pet_name: "",
